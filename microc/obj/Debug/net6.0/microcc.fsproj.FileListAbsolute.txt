@@ -1,0 +1,6 @@
+c:\Users\86152\Desktop\plzoofs-master\microc\obj\Debug\net6.0\microcc.AssemblyInfoInputs.cache
+c:\Users\86152\Desktop\plzoofs-master\microc\obj\Debug\net6.0\microcc.AssemblyInfo.fs
+c:\Users\86152\Desktop\plzoofs-master\microc\obj\Debug\net6.0\microcc.fsproj.CoreCompileInputs.cache
+c:\Users\86152\Desktop\Compiler-Principle\Compiler-Principle\microc\obj\Debug\net6.0\microcc.AssemblyInfoInputs.cache
+c:\Users\86152\Desktop\Compiler-Principle\Compiler-Principle\microc\obj\Debug\net6.0\microcc.AssemblyInfo.fs
+c:\Users\86152\Desktop\Compiler-Principle\Compiler-Principle\microc\obj\Debug\net6.0\microcc.fsproj.CoreCompileInputs.cache
