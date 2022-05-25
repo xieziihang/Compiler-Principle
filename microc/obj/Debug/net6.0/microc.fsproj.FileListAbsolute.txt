@@ -28,3 +28,8 @@ C:\Users\86152\Desktop\Compiler-Principle\Compiler-Principle\microc\obj\Debug\ne
 C:\Users\86152\Desktop\Compiler-Principle\Compiler-Principle\microc\obj\Debug\net6.0\microc.dll
 C:\Users\86152\Desktop\Compiler-Principle\Compiler-Principle\microc\obj\Debug\net6.0\microc.pdb
 C:\Users\86152\Desktop\Compiler-Principle\Compiler-Principle\microc\obj\Debug\net6.0\microc.genruntimeconfig.cache
+c:\Users\86152\Desktop\Cp\Compiler-Principle-master (1)\Compiler-Principle-master\microc\obj\Debug\net6.0\microc.AssemblyInfoInputs.cache
+c:\Users\86152\Desktop\Cp\Compiler-Principle-master (1)\Compiler-Principle-master\microc\obj\Debug\net6.0\microc.AssemblyInfo.fs
+c:\Users\86152\Desktop\Cp\Compiler-Principle-master (1)\Compiler-Principle-master\microc\obj\Debug\net6.0\microc.fsproj.CoreCompileInputs.cache
+c:\Users\86152\Desktop\Cp\Compiler-Principle-master (1)\Compiler-Principle-master\microc\obj\Debug\net6.0\microc.dll
+c:\Users\86152\Desktop\Cp\Compiler-Principle-master (1)\Compiler-Principle-master\microc\obj\Debug\net6.0\microc.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\86152\\Desktop\\Compiler-Principle\\Compiler-Principle\\microc\\microc.fsproj": {}
+    "c:\\Users\\86152\\Desktop\\Cp\\Compiler-Principle-master (1)\\Compiler-Principle-master\\microc\\microc.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\86152\\Desktop\\Compiler-Principle\\Compiler-Principle\\microc\\microc.fsproj": {
+    "c:\\Users\\86152\\Desktop\\Cp\\Compiler-Principle-master (1)\\Compiler-Principle-master\\microc\\microc.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\86152\\Desktop\\Compiler-Principle\\Compiler-Principle\\microc\\microc.fsproj",
+        "projectUniqueName": "c:\\Users\\86152\\Desktop\\Cp\\Compiler-Principle-master (1)\\Compiler-Principle-master\\microc\\microc.fsproj",
         "projectName": "microc",
-        "projectPath": "C:\\Users\\86152\\Desktop\\Compiler-Principle\\Compiler-Principle\\microc\\microc.fsproj",
+        "projectPath": "c:\\Users\\86152\\Desktop\\Cp\\Compiler-Principle-master (1)\\Compiler-Principle-master\\microc\\microc.fsproj",
         "packagesPath": "C:\\Users\\86152\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\86152\\Desktop\\Compiler-Principle\\Compiler-Principle\\microc\\obj\\",
+        "outputPath": "c:\\Users\\86152\\Desktop\\Cp\\Compiler-Principle-master (1)\\Compiler-Principle-master\\microc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\86152\\AppData\\Roaming\\NuGet\\NuGet.Config"

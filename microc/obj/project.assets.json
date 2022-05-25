@@ -230,11 +230,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\86152\\Desktop\\Compiler-Principle\\Compiler-Principle\\microc\\interpc.fsproj",
+      "projectUniqueName": "C:\\Users\\86152\\Desktop\\Cp\\Compiler-Principle-master (1)\\Compiler-Principle-master\\microc\\interpc.fsproj",
       "projectName": "interpc",
-      "projectPath": "C:\\Users\\86152\\Desktop\\Compiler-Principle\\Compiler-Principle\\microc\\interpc.fsproj",
+      "projectPath": "C:\\Users\\86152\\Desktop\\Cp\\Compiler-Principle-master (1)\\Compiler-Principle-master\\microc\\interpc.fsproj",
       "packagesPath": "C:\\Users\\86152\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\86152\\Desktop\\Compiler-Principle\\Compiler-Principle\\microc\\obj\\",
+      "outputPath": "C:\\Users\\86152\\Desktop\\Cp\\Compiler-Principle-master (1)\\Compiler-Principle-master\\microc\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\86152\\AppData\\Roaming\\NuGet\\NuGet.Config"
