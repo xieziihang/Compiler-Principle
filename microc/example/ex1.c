@@ -17,11 +17,10 @@ void main(int n) {
   // 此时解释器，栈式虚拟机，x86程序表现各不相同，可以思考原因
   (*你好*)
   int i;
-  print i;
-  ++i;
-  println;
-  print i;
-  println;
+  i = 4;
+  int j;
+  j = i == 4? -1: 2;
+  print j;
   while (n > 0) {
     print n;
     n = n - 1;
