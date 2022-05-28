@@ -38,3 +38,8 @@ c:\Users\86152\Desktop\Cp\cp\microc\obj\Debug\net6.0\microc.AssemblyInfo.fs
 c:\Users\86152\Desktop\Cp\cp\microc\obj\Debug\net6.0\microc.fsproj.CoreCompileInputs.cache
 c:\Users\86152\Desktop\Cp\cp\microc\obj\Debug\net6.0\microc.dll
 c:\Users\86152\Desktop\Cp\cp\microc\obj\Debug\net6.0\microc.pdb
+c:\Users\86152\Desktop\Compiler-Principle-master\Compiler-Principle-master\microc\obj\Debug\net6.0\microc.AssemblyInfoInputs.cache
+c:\Users\86152\Desktop\Compiler-Principle-master\Compiler-Principle-master\microc\obj\Debug\net6.0\microc.AssemblyInfo.fs
+c:\Users\86152\Desktop\Compiler-Principle-master\Compiler-Principle-master\microc\obj\Debug\net6.0\microc.fsproj.CoreCompileInputs.cache
+c:\Users\86152\Desktop\Compiler-Principle-master\Compiler-Principle-master\microc\obj\Debug\net6.0\microc.dll
+c:\Users\86152\Desktop\Compiler-Principle-master\Compiler-Principle-master\microc\obj\Debug\net6.0\microc.pdb

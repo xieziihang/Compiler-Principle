@@ -255,7 +255,13 @@ let rec exec stmt (locEnv: locEnv) (gloEnv: gloEnv) (store: store) : store =
             exec stmt1 locEnv gloEnv store1 //True分支
         else
             exec stmt2 locEnv gloEnv store1 //False分支
-
+    | For(e1,e2,e3,body) ->
+      let (v, store1) = eval e1 locEnv gloEnv store
+      let rec loop store1 = 
+          let (v,store2) = eval e2 locEnv gloEnv store1
+          if v<>0 then loop(snd(eval e3 locEnv gloEnv (exec body locEnv gloEnv store2)))
+          else store2
+      loop store1 
     | While (e, body) ->
 
         //定义 While循环辅助函数 loop
