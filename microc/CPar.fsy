@@ -17,23 +17,22 @@ let nl = CstI 10 //  \n 的 ASCII 码
 %token <int> CSTINT CSTBOOL  // <int> 是词元的语义值类型
 %token <string> CSTSTRING NAME
 
-%token CHAR ELSE IF INT NULL PRINT PRINTLN RETURN VOID FOR WHILE
+%token CHAR ELSE IF INT NULL PRINT PRINTLN RETURN VOID WHILE
 %token PLUS MINUS TIMES DIV MOD
 %token EQ NE GT LT GE LE
-%token NOT SEQOR SEQAND PREDEC PREINC
-%token LPAR RPAR LBRACE RBRACE LBRACK RBRACK SEMI COMMA ASSIGN AMP COLON QUEST
+%token NOT SEQOR SEQAND
+%token LPAR RPAR LBRACE RBRACE LBRACK RBRACK SEMI COMMA ASSIGN AMP
 %token EOF
 
 %right ASSIGN             /* lowest precedence */  // 最下面的优先级最高
 %nonassoc PRINT
-%right QUEST COLON
 %left SEQOR
 %left SEQAND
 %left EQ NE 
 %nonassoc GT LT GE LE
 %left PLUS MINUS
 %left TIMES DIV MOD 
-%nonassoc PREDEC PREINC NOT AMP 
+%nonassoc NOT AMP 
 %nonassoc LBRACK          /* highest precedence  */
 
 %start Main            // 语法开始符号
@@ -140,7 +139,6 @@ StmtM:  /* No unbalanced if-else */
   | Block                               { $1                   }
   | IF LPAR Expr RPAR StmtM ELSE StmtM  { If($3, $5, $7)       }
   | WHILE LPAR Expr RPAR StmtM          { While($3, $5)        }
-  | FOR LPAR Expr SEMI Expr SEMI Expr RPAR StmtM { For($3, $5, $7, $9) }
 ;
 
 StmtU:
@@ -156,10 +154,6 @@ Expr:
   //非左值的情况
 ExprNotAccess:
     AtExprNotAccess                     { $1                  }
-  | PREDEC Access                       { PreDec $2           }
-  | PREINC Access                       { PreInc $2           }    
-  | Access PREDEC                       {  PreDec $1          }
-  | Access PREINC                       {  PreInc $1          }
   | Access ASSIGN Expr                  { Assign($1, $3)      } // $1为左值
   | NAME LPAR Exprs RPAR                { Call($1, $3)        }  
   | NOT Expr                            { Prim1("!", $2)      }
@@ -176,7 +170,6 @@ ExprNotAccess:
   | Expr LT    Expr                     { Prim2("<",  $1, $3) }
   | Expr GE    Expr                     { Prim2(">=", $1, $3) }
   | Expr LE    Expr                     { Prim2("<=", $1, $3) }
-  | Expr QUEST Expr COLON Expr          { Prim3($1, $3, $5)   }
   | Expr SEQAND Expr                    { Andalso($1, $3)     }
   | Expr SEQOR  Expr                    { Orelse($1, $3)      }
 ;

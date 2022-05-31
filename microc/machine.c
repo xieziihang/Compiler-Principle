@@ -299,7 +299,7 @@ int execcode(int p[], int s[], int iargs[], int iargc, int /* boolean */ trace)
     case RET:
     {
       int res = s[sp];
-      sp = sp - p[pc]; // 释放空间
+      sp = sp - p[pc]; // 释放调用参数，局部变量空间
       bp = s[--sp];   // 恢复bp
       pc = s[--sp];  // 返回地址
       s[sp] = res;   // 栈底保留结果

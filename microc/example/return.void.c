@@ -1,7 +1,7 @@
 int main(int n) {
     
-    return g(n);
+    return g(n,n);
 }
-void g(int m){
+void g(int m,int o){
     return 3;
 }

@@ -96,7 +96,7 @@ let rec allocateWithMsg (kind: int -> Var) (typ, x) (varEnv: VarEnv) =
 
     (varEnv, instrs)
 
-and allocate (kind:  int-> Var) (typ, x) (varEnv: VarEnv) : VarEnv * instr list =
+and allocate (kind: int -> Var) (typ, x) (varEnv: VarEnv) : VarEnv * instr list =
 
     msg $"allocate called!{(x, typ)}"
 
@@ -134,6 +134,7 @@ let bindParams paras ((env, newloc): VarEnv) : VarEnv = List.fold bindParam (env
 let makeGlobalEnvs (topdecs: topdec list) : VarEnv * FunEnv * instr list =
     let rec addv decs varEnv funEnv =
 
+        msg $"\nGlobal varEnv:\n{varEnv}\n"
         msg $"\nGlobal funEnv:\n{funEnv}\n"
 
         match decs with
@@ -223,8 +224,6 @@ and cStmtOrDec stmtOrDec (varEnv: VarEnv) (funEnv: FunEnv) : VarEnv * instr list
 
 and cExpr (e: expr) (varEnv: VarEnv) (funEnv: FunEnv) : instr list =
     match e with
-    | PreInc acc     -> cAccess acc varEnv funEnv @ [DUP] @ [LDI] @ [CSTI 1] @ [ADD] @ [STI]
-    | PreDec acc     -> cAccess acc varEnv funEnv @ [DUP] @ [LDI] @ [CSTI 1] @ [SUB] @ [STI] 
     | Access acc -> cAccess acc varEnv funEnv @ [ LDI ]
     | Assign (acc, e) ->
         cAccess acc varEnv funEnv
@@ -254,16 +253,6 @@ and cExpr (e: expr) (varEnv: VarEnv) (funEnv: FunEnv) : instr list =
              | ">" -> [ SWAP; LT ]
              | "<=" -> [ SWAP; LT; NOT ]
              | _ -> raise (Failure "unknown primitive 2"))
-    | Prim3 (cond, e1, e2) ->
-      let labend = newLabel ()
-      let labelse = newLabel ()
-
-      cExpr cond varEnv funEnv
-      @ [ IFZERO labelse ]
-        @ cExpr e1 varEnv funEnv
-          @ [ GOTO labend ]
-            @ [ Label labelse ]
-              @ cExpr e2 varEnv funEnv @ [ Label labend ]
     | Andalso (e1, e2) ->
         let labend = newLabel ()
         let labfalse = newLabel ()

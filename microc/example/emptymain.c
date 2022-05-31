@@ -1,2 +1,2 @@
-void main() {
+void main(int n) {
 }

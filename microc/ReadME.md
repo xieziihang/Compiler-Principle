@@ -1,4 +1,4 @@
-﻿## 文件说明
+## 文件说明
 
 ### interpreter  解释器
 
@@ -206,11 +206,11 @@ dotnet build machine.csproj   #构建虚拟机 machine.exe
 gcc -o machine.exe machine.c
 
 # 虚拟机执行指令
-machine.exe ex9.out 3
+machine.exe ./example/ex9.out 3
 
 # 调试执行指令
-machine.exe -trace ex9.out 0  # -trace  并查看跟踪信息
-machine.exe -trace ex9.out 3
+machine.exe -trace ./example/ex9.out 0  # -trace  并查看跟踪信息
+machine.exe -trace ./example/ex9.out 3
 
 ```
 
@@ -218,11 +218,11 @@ machine.exe -trace ex9.out 3
 
 ```sh
 javac Machine.java
-java Machine ex9.out 3
+java Machine ./example/ex9.out 3
 
 javac Machinetrace.java
-java Machinetrace ex9.out 0
-java Machinetrace ex9.out 3
+java Machinetrace ./example/ex9.out 0
+java Machinetrace ./example/ex9.out 3
 ```
 
 #### E 编译到x86_64
@@ -278,7 +278,7 @@ example/ex1.exe 8
 # 使用 build target 编译 ex1.c
 # 可修改 microc.fsproj 编译其他案例文件
 
-dotnet  build -t:ccrunx86 microc.fsproj
+dotnet build -t:ccrunx86 microc.fsproj
 
 ```
 

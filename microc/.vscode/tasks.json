@@ -1,40 +1,40 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build & run",
+            "label": "build",
             "command": "dotnet",
-            "type": "shell",
+            "type": "process",
             "args": [
                 "build",
-                "-t:ccrun",
-                "microc.fsproj",
+                "${workspaceFolder}/machine.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
-            "group": "build",
-            "presentation": {
-                "reveal": "silent"
-            },
             "problemMatcher": "$msCompile"
-        }
-        ,
+        },
         {
-            "label": "build & run x86",
+            "label": "publish",
             "command": "dotnet",
-            "type": "shell",
+            "type": "process",
             "args": [
-                "build",
-                "-t:ccrunx86",
-                "microc.fsproj"
-                            ]
+                "publish",
+                "${workspaceFolder}/machine.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
             ],
-            "group": "build",
-            "presentation": {
-                "reveal": "silent"
-            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}/machine.csproj"
+            ],
             "problemMatcher": "$msCompile"
         }
     ]

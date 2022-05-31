@@ -255,13 +255,7 @@ let rec exec stmt (locEnv: locEnv) (gloEnv: gloEnv) (store: store) : store =
             exec stmt1 locEnv gloEnv store1 //True分支
         else
             exec stmt2 locEnv gloEnv store1 //False分支
-    | For(e1,e2,e3,body) ->
-      let (v, store1) = eval e1 locEnv gloEnv store
-      let rec loop store1 = 
-          let (v,store2) = eval e2 locEnv gloEnv store1
-          if v<>0 then loop(snd(eval e3 locEnv gloEnv (exec body locEnv gloEnv store2)))
-          else store2
-      loop store1 
+
     | While (e, body) ->
 
         //定义 While循环辅助函数 loop
@@ -304,14 +298,6 @@ and stmtordec stmtordec locEnv gloEnv store =
 
 and eval e locEnv gloEnv store : int * store =
     match e with
-    | PreInc acc -> 
-      let (loc, store1) = access acc locEnv gloEnv store
-      let tmp = getSto store1 loc
-      (tmp + 1, setSto store1 loc (tmp + 1))
-    | PreDec acc -> 
-      let (loc, store1) = access acc locEnv gloEnv store
-      let tmp = getSto store1 loc
-      (tmp - 1, setSto store1 loc (tmp - 1))
     | Access acc ->
         let (loc, store1) = access acc locEnv gloEnv store
         (getSto store1 loc, store1)
@@ -356,13 +342,6 @@ and eval e locEnv gloEnv store : int * store =
             | _ -> failwith ("unknown primitive " + ope)
 
         (res, store2)
-    | Prim3 (cond,e1,e2)->
-        let (v, store1) = eval cond locEnv gloEnv store
-
-        if v <> 0 then
-            eval e1 locEnv gloEnv store1
-        else
-            eval e2 locEnv gloEnv store1
     | Andalso (e1, e2) ->
         let (i1, store1) as res = eval e1 locEnv gloEnv store
 
