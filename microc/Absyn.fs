@@ -16,7 +16,9 @@ type typ =
   | TypA of typ * int option         (* Array type                  *)
   | TypP of typ                      (* Pointer type                *)
                                                                    
-and expr =                           // 表达式，右值                                                
+and expr =                           // 表达式，右值 
+  | SelfInc of access                (* x++                         *)
+  | SelfDec of access                (* x--                         *)                                               
   | Access of access                 (* x    or  *p    or  a[e]     *) //访问左值（右值）
   | Assign of access * expr          (* x=e  or  *p=e  or  a[e]=e   *)
   | Addr of access                   (* &x   or  &*p   or  &a[e]    *)

@@ -298,6 +298,14 @@ and stmtordec stmtordec locEnv gloEnv store =
 
 and eval e locEnv gloEnv store : int * store =
     match e with
+    | SelfInc acc -> 
+      let (loc, store1) = access acc locEnv gloEnv store
+      let temp = getSto store1 loc
+      (temp + 1, setSto store1 loc (temp + 1))
+    | SelfDec acc -> 
+      let (loc, store1) = access acc locEnv gloEnv store
+      let temp = getSto store1 loc
+      (temp - 1, setSto store1 loc (temp - 1))
     | Access acc ->
         let (loc, store1) = access acc locEnv gloEnv store
         (getSto store1 loc, store1)
