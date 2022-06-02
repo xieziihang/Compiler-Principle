@@ -10,6 +10,8 @@ type token =
   | RBRACK
   | SEMI
   | COMMA
+  | COLON
+  | QUESTION
   | ASSIGN
   | AMP
   | NOT
@@ -50,6 +52,8 @@ type tokenId =
     | TOKEN_RBRACK
     | TOKEN_SEMI
     | TOKEN_COMMA
+    | TOKEN_COLON
+    | TOKEN_QUESTION
     | TOKEN_ASSIGN
     | TOKEN_AMP
     | TOKEN_NOT
