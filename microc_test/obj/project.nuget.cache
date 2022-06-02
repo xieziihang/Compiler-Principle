@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "yg9ktwf/A6ovTDJxNiaNG16pbZwj7NA8nfEn3f8xs/q916bSrmbxEPW6NMZDxfjFNOMu1c7cLj4rguNTVhpvlQ==",
+  "dgSpecHash": "p8aOnzWsULs8zufd+HZEScBaWVDxH6pbXbXkx8DUTX3r3cO0lW5WQ8W4OZEjf7Sn23XJfdpPTZFsGFuYARBQZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\86152\\Desktop\\ori\\plzoofs-master\\microc\\microc.fsproj",
+  "projectFilePath": "c:\\Users\\86152\\Desktop\\compile_principle\\final_pro\\microc_test\\microcc.fsproj",
   "expectedPackageFiles": [
     "C:\\Users\\86152\\.nuget\\packages\\fsharp.core\\6.0.2\\fsharp.core.6.0.2.nupkg.sha512",
-    "C:\\Users\\86152\\.nuget\\packages\\fslexyacc\\10.2.0\\fslexyacc.10.2.0.nupkg.sha512",
-    "C:\\Users\\86152\\.nuget\\packages\\fslexyacc.runtime\\10.2.0\\fslexyacc.runtime.10.2.0.nupkg.sha512"
+    "C:\\Users\\86152\\.nuget\\packages\\fslexyacc\\10.0.0\\fslexyacc.10.0.0.nupkg.sha512",
+    "C:\\Users\\86152\\.nuget\\packages\\fslexyacc.runtime\\10.0.0\\fslexyacc.runtime.10.0.0.nupkg.sha512"
   ],
   "logs": []
 }
