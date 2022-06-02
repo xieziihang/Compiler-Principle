@@ -1,0 +1,3 @@
+c:\Users\86152\Desktop\compile_principle\final_pro\microc_test\obj\Debug\net6.0\interpc.AssemblyInfoInputs.cache
+c:\Users\86152\Desktop\compile_principle\final_pro\microc_test\obj\Debug\net6.0\interpc.AssemblyInfo.fs
+c:\Users\86152\Desktop\compile_principle\final_pro\microc_test\obj\Debug\net6.0\interpc.fsproj.CoreCompileInputs.cache
