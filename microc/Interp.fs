@@ -269,6 +269,17 @@ let rec exec stmt (locEnv: locEnv) (gloEnv: gloEnv) (store: store) : store =
                 store2 //退出循环返回 环境store2
 
         loop store
+    | DoWhile (body, e) ->
+      let rec loop store1 = 
+        let (v, store2) = eval e locEnv gloEnv store1
+        if v <> 0 then
+          loop (exec body locEnv gloEnv store2)
+        else
+          store2
+      // 因为是 do ... while 所以无论while 内条件是否成立，都会
+      // 先执行一次 stmt
+      let dostore = exec body locEnv gloEnv store
+      loop dostore
     | For(x, estart, estop, stmt) ->
       // 首先获取 x 表达式执行之后的上下文信息 store1 
       let (_, store1) = eval x locEnv gloEnv store
@@ -276,7 +287,7 @@ let rec exec stmt (locEnv: locEnv) (gloEnv: gloEnv) (store: store) : store =
         // 在 store1 中求出 第二个表达式的值 
         let (value, store2) = eval estart locEnv gloEnv store1
         // 如果第二个表达式不为 0，则执行循环体，并且在执行之后的上下文中执行
-        // estop表达式，将执行后的上下文作为参数递归调用循环
+        // estop表达式，将执行后的上下文作为参数递归调用 loop 函数
         if value <> 0 then
           loop(snd(eval estop locEnv gloEnv (exec stmt locEnv gloEnv store2)))
         else 
