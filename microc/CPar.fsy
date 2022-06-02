@@ -17,7 +17,7 @@ let nl = CstI 10 //  \n 的 ASCII 码
 %token <int> CSTINT CSTBOOL  // <int> 是词元的语义值类型
 %token <string> CSTSTRING NAME
 
-%token CHAR ELSE IF INT NULL PRINT PRINTLN RETURN VOID WHILE FOR DOWHILE DO
+%token CHAR ELSE IF INT NULL PRINT PRINTLN RETURN VOID WHILE FOR DOWHILE DO SWITCH CASE
 %token PLUS MINUS SELFINC SELFDEC TIMES DIV MOD
 %token EQ NE GT LT GE LE
 %token NOT SEQOR SEQAND
@@ -142,7 +142,13 @@ StmtM:  /* No unbalanced if-else */
   | WHILE LPAR Expr RPAR StmtM          { While($3, $5)        }
   | FOR LPAR Expr SEMI Expr SEMI Expr RPAR StmtM {For($3, $5, $7, $9)}
   | DO StmtM WHILE LPAR Expr RPAR SEMI  { DoWhile($2, $5)      }
+  | SWITCH LPAR Expr RPAR LBRACE CaseStmt RBRACE { Switch($3, $6) }
 ;
+CaseStmt:
+  //  AtExprNotAccess 非左值
+    CASE AtExprNotAccess COLON StmtM               { [Case($2,$4)] }
+  // 一个 switch 可能配有多个 case，以递归调用并将其级联在一起表示的方式满足上述 switch 语法
+  | CASE AtExprNotAccess COLON StmtM CaseStmt      { Case($2,$4) :: $5}
 
 StmtU:
     IF LPAR Expr RPAR StmtM ELSE StmtU  { If($3, $5, $7)       }

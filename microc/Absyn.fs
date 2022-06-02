@@ -43,6 +43,8 @@ and stmt =
   | Expr of expr                     (* Expression statement   e;   *)
   | Return of expr option            (* Return from method          *)
   | Block of stmtordec list          (* Block: grouping and scope   *)
+  | Switch of expr * stmt list       (* Switch                      *)
+  | Case of expr * stmt              (* Case                        *)
   // 语句块内部，可以是变量声明 或语句的列表                                                              
 
 and stmtordec =                                                    
