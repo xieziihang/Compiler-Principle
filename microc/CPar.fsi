@@ -2,6 +2,8 @@
 module CPar
 type token = 
   | EOF
+  | MAX
+  | MIN
   | LPAR
   | RPAR
   | LBRACE
@@ -56,6 +58,8 @@ type token =
   | CSTBOOL of (int)
 type tokenId = 
     | TOKEN_EOF
+    | TOKEN_MAX
+    | TOKEN_MIN
     | TOKEN_LPAR
     | TOKEN_RPAR
     | TOKEN_LBRACE

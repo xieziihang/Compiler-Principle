@@ -52,3 +52,4 @@ C:\Users\86152\Desktop\compile_principle\final_pro\microc\obj\Debug\net6.0\micro
 C:\Users\86152\Desktop\compile_principle\final_pro\microc\obj\Debug\net6.0\microc.dll
 C:\Users\86152\Desktop\compile_principle\final_pro\microc\obj\Debug\net6.0\microc.pdb
 C:\Users\86152\Desktop\compile_principle\final_pro\microc\obj\Debug\net6.0\microc.genruntimeconfig.cache
+c:\Users\86152\Desktop\compile_principle\final_pro\microc\obj\Debug\net6.0\microc.fsproj.CoreCompileInputs.cache

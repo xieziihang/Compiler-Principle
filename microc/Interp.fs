@@ -335,6 +335,18 @@ and stmtordec stmtordec locEnv gloEnv store =
 
 and eval e locEnv gloEnv store : int * store =
     match e with
+    // 两者取其较大者
+    | Max (e1, e2) ->
+        let (i1, store1) = eval e1 locEnv gloEnv store
+        let (i2, store2) = eval e2 locEnv gloEnv store1
+        let res = (if i1 > i2 then i1 else i2)
+        (res, store2)
+    // 两者取其较小者
+    | Min (e1, e2) ->
+        let (i1, store1) = eval e1 locEnv gloEnv store
+        let (i2, store2) = eval e2 locEnv gloEnv store1
+        let res = (if i1 < i2 then i1 else i2)
+        (res, store2)
     | SelfInc acc -> 
       let (loc, store1) = access acc locEnv gloEnv store
       let temp = getSto store1 loc
