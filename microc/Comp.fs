@@ -183,7 +183,8 @@ let rec cStmt stmt (varEnv: VarEnv) (funEnv: FunEnv) : instr list =
       let labbegin = newLabel()
       let labtest  = newLabel()
       
-      // 首先执行 e1 表达式进行初始化
+      // 在环境中求出 e1 的值之后将其入栈，之后通过 e2 判断条件
+      // 如果判断结果不为 0 则回到 labbegin，执行 body，之后执行 e3
       cExpr e1 varEnv funEnv @ [INCSP -1]
       @ [GOTO labtest; Label labbegin] @ cStmt body varEnv funEnv
       @ cExpr e3 varEnv funEnv @ [INCSP -1]
@@ -196,6 +197,18 @@ let rec cStmt stmt (varEnv: VarEnv) (funEnv: FunEnv) : instr list =
         @ cStmt body varEnv funEnv
           @ [ Label labtest ]
             @ cExpr e varEnv funEnv @ [ IFNZRO labbegin ]
+      | DoWhile (body, e) ->
+        let labbegin = newLabel ()
+        let labtest = newLabel ()
+        // 和 for 循环不同的是，无论是否符合执行条件，DoWhile 都需要首先执行一遍 body 内容
+        // 之后跳转至 labtest 处判断是否继续执行，如果可以执行就跳转到 labbegin
+        cStmt body varEnv funEnv
+        @[GOTO labtest]
+        @[Label labbegin] 
+        @ cStmt body varEnv funEnv
+        @[Label labtest] 
+        @ cExpr e varEnv funEnv 
+        @[IFNZRO labbegin]
     | Expr e -> cExpr e varEnv funEnv @ [ INCSP -1 ]
     | Block stmts ->
 
