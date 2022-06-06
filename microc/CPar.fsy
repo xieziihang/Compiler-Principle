@@ -17,7 +17,7 @@ let nl = CstI 10 //  \n 的 ASCII 码
 %token <int> CSTINT CSTBOOL  // <int> 是词元的语义值类型
 %token <string> CSTSTRING NAME
 
-%token CHAR ELSE IF INT NULL PRINT PRINTLN RETURN VOID WHILE FOR DOWHILE DO SWITCH CASE
+%token CHAR ELSE IF INT BOOL NULL PRINT PRINTLN RETURN VOID WHILE FOR DOWHILE DO SWITCH CASE
 %token PLUS MINUS SELFINC SELFDEC TIMES DIV MOD PLUSASSIGN MINUSASSIGN MULTIPLYASSIGN DIVASSIGN
 %token EQ NE GT LT GE LE
 %token NOT SEQOR SEQAND
@@ -230,4 +230,5 @@ Const:
 Type:
     INT                                 { TypI     }
   | CHAR                                { TypC     }
+  | BOOL                                { TypB    }
 ;

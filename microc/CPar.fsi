@@ -38,6 +38,7 @@ type token =
   | ELSE
   | IF
   | INT
+  | BOOL
   | NULL
   | PRINT
   | PRINTLN
@@ -91,6 +92,7 @@ type tokenId =
     | TOKEN_ELSE
     | TOKEN_IF
     | TOKEN_INT
+    | TOKEN_BOOL
     | TOKEN_NULL
     | TOKEN_PRINT
     | TOKEN_PRINTLN
