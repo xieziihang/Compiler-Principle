@@ -179,6 +179,15 @@ let rec cStmt stmt (varEnv: VarEnv) (funEnv: FunEnv) : instr list =
             @ [ GOTO labend ]
               @ [ Label labelse ]
                 @ cStmt stmt2 varEnv funEnv @ [ Label labend ]
+    | For(e1, e2, e3, body) -> 
+      let labbegin = newLabel()
+      let labtest  = newLabel()
+      
+      // 首先执行 e1 表达式进行初始化
+      cExpr e1 varEnv funEnv @ [INCSP -1]
+      @ [GOTO labtest; Label labbegin] @ cStmt body varEnv funEnv
+      @ cExpr e3 varEnv funEnv @ [INCSP -1]
+      @ [Label labtest] @ cExpr e2 varEnv funEnv @ [IFNZRO labbegin]
     | While (e, body) ->
         let labbegin = newLabel ()
         let labtest = newLabel ()
@@ -230,6 +239,14 @@ and cExpr (e: expr) (varEnv: VarEnv) (funEnv: FunEnv) : instr list =
     // 自减
     | SelfDec acc->
       cAccess acc varEnv funEnv @ [DUP] @ [LDI] @ [CSTI 1] @ [SUB] @ [STI] 
+    | Prim3(e1, e2, e3) ->
+        let labelse = newLabel()
+        let labend  = newLabel()
+        //求出 e1 的值作为判断条件，如果其为 false(0) 则跳转到 Labelelse 处
+        cExpr e1 varEnv funEnv @ [IFZERO labelse] 
+        @ cExpr e2 varEnv funEnv @ [GOTO labend]
+        @ [Label labelse] @ cExpr e3 varEnv funEnv
+        @ [Label labend]
     | Access acc -> cAccess acc varEnv funEnv @ [ LDI ]
     | Assign (acc, e) ->
         cAccess acc varEnv funEnv
