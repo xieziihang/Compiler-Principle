@@ -350,6 +350,26 @@ and eval e locEnv gloEnv store : int * store =
         let (loc, store1) = access acc locEnv gloEnv store
         let (res, store2) = eval e locEnv gloEnv store1
         (res, setSto store2 loc res)
+     | PlusAssign(acc, e) ->
+        let (loc, store1) = access acc locEnv gloEnv store
+        let tmp = getSto store1 loc
+        let (res, store2) = eval e locEnv gloEnv store1
+        (tmp + res, setSto store2 loc (tmp+res))
+    | MinusAssign(acc, e) ->
+        let (loc, store1) = access acc locEnv gloEnv store
+        let tmp = getSto store1 loc
+        let (res, store2) = eval e locEnv gloEnv store1
+        (tmp - res, setSto store2 loc (tmp-res))
+    | MultiplyAssign(acc, e) ->
+        let (loc, store1) = access acc locEnv gloEnv store
+        let tmp = getSto store1 loc
+        let (res, store2) = eval e locEnv gloEnv store1
+        (tmp * res, setSto store2 loc (tmp*res))
+    | DivAssign(acc, e) ->
+        let (loc, store1) = access acc locEnv gloEnv store
+        let tmp = getSto store1 loc
+        let (res, store2) = eval e locEnv gloEnv store1
+        (tmp / res, setSto store2 loc (tmp/res))
     | CstI i -> (i, store)
     | Addr acc -> access acc locEnv gloEnv store
     | Prim1 (ope, e1) ->

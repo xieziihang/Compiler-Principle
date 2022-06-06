@@ -30,6 +30,10 @@ type token =
   | TIMES
   | DIV
   | MOD
+  | PLUSASSIGN
+  | MINUSASSIGN
+  | MULTIPLYASSIGN
+  | DIVASSIGN
   | CHAR
   | ELSE
   | IF
@@ -79,6 +83,10 @@ type tokenId =
     | TOKEN_TIMES
     | TOKEN_DIV
     | TOKEN_MOD
+    | TOKEN_PLUSASSIGN
+    | TOKEN_MINUSASSIGN
+    | TOKEN_MULTIPLYASSIGN
+    | TOKEN_DIVASSIGN
     | TOKEN_CHAR
     | TOKEN_ELSE
     | TOKEN_IF
