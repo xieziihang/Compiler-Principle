@@ -60,7 +60,7 @@ and stmtordec =
 and topdec = 
   | Fundec of typ option * string * (typ * string) list * stmt
   | Vardec of typ * string
-
+  
 // 程序是顶级声明的列表
 and program = 
   | Prog of topdec list

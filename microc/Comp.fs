@@ -224,6 +224,12 @@ and cStmtOrDec stmtOrDec (varEnv: VarEnv) (funEnv: FunEnv) : VarEnv * instr list
 
 and cExpr (e: expr) (varEnv: VarEnv) (funEnv: FunEnv) : instr list =
     match e with
+    // 自增
+    | SelfInc acc -> 
+      cAccess acc varEnv funEnv @ [DUP] @ [LDI] @ [CSTI 1] @ [ADD] @ [STI]
+    // 自减
+    | SelfDec acc->
+      cAccess acc varEnv funEnv @ [DUP] @ [LDI] @ [CSTI 1] @ [SUB] @ [STI] 
     | Access acc -> cAccess acc varEnv funEnv @ [ LDI ]
     | Assign (acc, e) ->
         cAccess acc varEnv funEnv

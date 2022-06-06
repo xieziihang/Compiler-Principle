@@ -25,3 +25,4 @@ C:\Users\86152\Desktop\compile_principle\final_pro\microc\obj\Debug\net6.0\inter
 C:\Users\86152\Desktop\compile_principle\final_pro\microc\obj\Debug\net6.0\interpc.dll
 C:\Users\86152\Desktop\compile_principle\final_pro\microc\obj\Debug\net6.0\interpc.pdb
 C:\Users\86152\Desktop\compile_principle\final_pro\microc\obj\Debug\net6.0\interpc.genruntimeconfig.cache
+c:\Users\86152\Desktop\compile_principle\final_pro\microc\obj\Debug\net6.0\interpc.fsproj.CoreCompileInputs.cache

@@ -1,6 +1,7 @@
 void main()
 {
   int i;
+  i = 0;
   print i;
   println;
   i++;

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\86152\\Desktop\\compile_principle\\final_pro\\microc\\microc.fsproj": {}
+    "C:\\Users\\86152\\Desktop\\compile_principle\\final_pro\\microc\\microc.fsproj": {}
   },
   "projects": {
-    "c:\\Users\\86152\\Desktop\\compile_principle\\final_pro\\microc\\microc.fsproj": {
+    "C:\\Users\\86152\\Desktop\\compile_principle\\final_pro\\microc\\microc.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\86152\\Desktop\\compile_principle\\final_pro\\microc\\microc.fsproj",
+        "projectUniqueName": "C:\\Users\\86152\\Desktop\\compile_principle\\final_pro\\microc\\microc.fsproj",
         "projectName": "microc",
-        "projectPath": "c:\\Users\\86152\\Desktop\\compile_principle\\final_pro\\microc\\microc.fsproj",
+        "projectPath": "C:\\Users\\86152\\Desktop\\compile_principle\\final_pro\\microc\\microc.fsproj",
         "packagesPath": "C:\\Users\\86152\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\86152\\Desktop\\compile_principle\\final_pro\\microc\\obj\\",
+        "outputPath": "C:\\Users\\86152\\Desktop\\compile_principle\\final_pro\\microc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\86152\\AppData\\Roaming\\NuGet\\NuGet.Config"
