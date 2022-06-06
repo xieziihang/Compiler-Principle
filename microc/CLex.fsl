@@ -31,6 +31,7 @@ let keyword s =
     | "void"    -> VOID 
     | "Max"     -> MAX
     | "Min"     -> MIN
+    | "Abs"     -> ABS
     | "for"     -> FOR
     | "while"   -> WHILE 
     | "do"      -> DO       

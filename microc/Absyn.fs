@@ -35,12 +35,14 @@ and expr =                           // 表达式，右值
   | Orelse of expr * expr            (* Sequential or               *)
   | Call of string * expr list       (* Function call f(...)        *)
   | Max of expr * expr               (* 两者取较大                   *)
-  | Min of expr * expr               (* 两者取较小                   *)                                                          
+  | Min of expr * expr               (* 两者取较小                   *) 
+  | Abs of expr                      (* 取绝对值                     *)
+
 and access =                         //左值，存储的位置                                            
   | AccVar of string                 (* Variable access        x    *) 
   | AccDeref of expr                 (* Pointer dereferencing  *p   *)
   | AccIndex of access * expr        (* Array indexing         a[e] *)
-                                                                   
+                                                                  
 and stmt =                                                         
   | If of expr * stmt * stmt         (* Conditional                 *)
   | For of expr * expr * expr * stmt (* for 循环                    *)

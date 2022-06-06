@@ -4,6 +4,7 @@ type token =
   | EOF
   | MAX
   | MIN
+  | ABS
   | LPAR
   | RPAR
   | LBRACE
@@ -60,6 +61,7 @@ type tokenId =
     | TOKEN_EOF
     | TOKEN_MAX
     | TOKEN_MIN
+    | TOKEN_ABS
     | TOKEN_LPAR
     | TOKEN_RPAR
     | TOKEN_LBRACE
