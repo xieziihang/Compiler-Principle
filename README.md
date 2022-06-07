@@ -20,9 +20,9 @@
 
 **成员代码提交日志**（包括自己的小号和 GitKraken 账号）
 
-![](https://s3.bmp.ovh/imgs/2022/06/06/59891e35e69b879f.png)
+![](https://s3.bmp.ovh/imgs/2022/06/07/e9d78892ab676d9a.png)
 
-![](https://s3.bmp.ovh/imgs/2022/06/06/0464c0b13d520167.png)
+![](https://s3.bmp.ovh/imgs/2022/06/07/2a2124013704e38f.png)
 
 ## 实现功能
 
